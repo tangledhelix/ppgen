@@ -12515,6 +12515,8 @@ class Pph(Book):
 
       if DirectoryOK:
         for s in filelist:
+          if s[0] == ".":
+            continue
           found = False
           for t in filetypes:
             if s.endswith(t):
