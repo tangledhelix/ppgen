@@ -6012,8 +6012,8 @@ class Ppt(Book):
         while m:
           bnInLine = True
           t = " 'Pg{}' => ['offset' => '{}.{}', 'label' => '', 'style' => '', 'action' => '', 'base' => ''],".format(m.group(2),i+1,len(m.group(1)))  # format a line in the .bn array (GG wants a 1-based count)
-          t = re.sub("[","{",t,1)
-          t = re.sub("]","}",t,1)
+          t = re.sub("\\[","{",t,1)
+          t = re.sub("\\]","}",t,1)
           self.bb.append(t)
           if self.ppqt2:
             ccount += len(m.group(1)) - offset1 # count characters we haven't counted so far
